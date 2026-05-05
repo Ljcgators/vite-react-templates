@@ -34,9 +34,9 @@ export default function StoryPage({ page, totalPages }: Props) {
       <div className="story-page__text">
         {page.text.map((line, i) =>
           line === "" ? (
-            <br key={i} />
+            <br key={`br-${i}`} />
           ) : (
-            <p key={i} className={isCover ? "story-page__subtitle" : "story-page__line"}>
+            <p key={`line-${i}-${line.slice(0, 12)}`} className={isCover ? "story-page__subtitle" : "story-page__line"}>
               {line}
             </p>
           )
